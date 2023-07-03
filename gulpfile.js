@@ -2,14 +2,14 @@ const gulp = require('gulp')
 const autoprefixer = require('gulp-autoprefixer') // prefixex
 const cleanCSS = require('gulp-clean-css') // minify css
 const concat = require('gulp-concat') // unit files
-const sass = require('gulp-sass') // scss sass
+const sass = require('gulp-sass')(require('sass')) // scss sass
 
 // sources
 const paths = {
     styles: {
         src: {
             // Бери отсюда
-            custom: './Styles/scss/*.scss'
+            custom: './Styles/scss/**/*.scss'
         },
         // Ставь сюда
         dist: './Styles/css/'
