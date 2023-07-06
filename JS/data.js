@@ -1,5 +1,4 @@
-let allSongs = [
-    {
+let allSongs = [{
         name: 'Mask Off',
         path: 'songs/Mask Off.mp3',
         img: 'img/covers/Future – Mask_Off.jpg',
@@ -55,5 +54,29 @@ let allSongs = [
         id: 6,
         active: false
     },
+    {
+        name: 'Arcade',
+        path: 'songs/Arcade.mp3',
+        img: 'img/covers/Arcade.jfif',
+        artist: 'Duncan Laurance',
+        id: 6,
+        active: false
+    },
+    {
+        name: 'Arcade',
+        path: 'songs/Arcade.mp3',
+        img: 'img/covers/Arcade.jfif',
+        artist: 'Duncan Laurance',
+        id: 6,
+        active: false
+    },
+    {
+        name: 'Renegades',
+        path: 'songs/x_ambassador_-_renegades_(z3.fm).mp3',
+        img: 'img/covers/Renegades.webp',
+        artist: 'X Ambassador',
+        id: 7,
+        active: false
+    },
 ]
-export {allSongs}
+export { allSongs }
