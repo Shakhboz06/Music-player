@@ -1,10 +1,19 @@
 let allSongs = [{
+        name: 'Renegades',
+        path: 'songs/x_ambassador_-_renegades_(z3.fm).mp3',
+        img: 'img/covers/Renegades.webp',
+        artist: 'X Ambassador',
+        id: 0,
+        active: true,
+    },
+    {
+
         name: 'Mask Off',
         path: 'songs/Mask Off.mp3',
         img: 'img/covers/Future – Mask_Off.jpg',
         artist: 'Future',
-        id: 0,
-        active: true
+        id: 7,
+        active: false,
     },
     {
         name: 'Body',
@@ -12,7 +21,7 @@ let allSongs = [{
         img: 'img/covers/Body.jpg',
         artist: 'Tion Wayne, Russ Millions, Capo Plaza',
         id: 1,
-        active: false
+        active: false,
     },
     {
         name: 'Watermelon sugar',
@@ -20,7 +29,7 @@ let allSongs = [{
         img: 'img/covers/Watermelon Sugar.jpg',
         artist: 'Harry Styles',
         id: 2,
-        active: false
+        active: false,
     },
     {
         name: 'Papaoutai',
@@ -28,7 +37,7 @@ let allSongs = [{
         img: 'img/covers/Stromae-Papaoutai.jpg',
         artist: 'Stromae',
         id: 3,
-        active: false
+        active: false,
     },
     {
         name: 'Nothing Breaks Like a Heart',
@@ -36,7 +45,7 @@ let allSongs = [{
         img: 'img/covers/Nothing Breaks Like a Heart.png',
         artist: 'Mark Ronson ft. Miley Cyrus',
         id: 4,
-        active: false
+        active: false,
     },
     {
         name: 'Blinding Lights',
@@ -44,7 +53,7 @@ let allSongs = [{
         img: 'img/covers/Blinding Lights.jfif',
         artist: 'The Weekend',
         id: 5,
-        active: false
+        active: false,
     },
     {
         name: 'Arcade',
@@ -52,15 +61,7 @@ let allSongs = [{
         img: 'img/covers/Arcade.jfif',
         artist: 'Duncan Laurance',
         id: 6,
-        active: false
-    },
-    {
-        name: 'Renegades',
-        path: 'songs/x_ambassador_-_renegades_(z3.fm).mp3',
-        img: 'img/covers/Renegades.webp',
-        artist: 'X Ambassador',
-        id: 7,
-        active: false
+        active: false,
     },
 ]
 export { allSongs }
