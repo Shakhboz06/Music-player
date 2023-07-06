@@ -64,7 +64,7 @@ let play_forward = () => {
         index_no = 0
         load_track(index_no)
         playSong()
-        // screensaver()
+            // screensaver()
     }
     liked.classList.remove('active')
 }
@@ -133,12 +133,12 @@ progressArea.onclick = (e) => {
 
 
 let decreaseVolume = () => {
-    track.volume -= 0.25
+    track.volume -= 0.2
 }
 volume_m.onclick = () => decreaseVolume()
 
 let increaseVolume = () => {
-    track.volume += 0.25
+    track.volume += 0.2
 }
 volume_p.onclick = () => increaseVolume()
 
@@ -206,5 +206,3 @@ let music_list = () => {
     }
 }
 menu.onclick = () => music_list(index_no)
-
-

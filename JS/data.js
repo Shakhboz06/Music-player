@@ -8,11 +8,20 @@ let allSongs = [{
     },
     {
 
+        name: 'Mockingbird',
+        path: 'songs/Eminem-Mockingbird-(HipHopKit.com).mp3',
+        img: 'img/covers/Mockingbird.webp',
+        artist: 'Eminem',
+        id: 1,
+        active: false,
+    },
+    {
+
         name: 'Mask Off',
         path: 'songs/Mask Off.mp3',
         img: 'img/covers/Future – Mask_Off.jpg',
         artist: 'Future',
-        id: 7,
+        id: 2,
         active: false,
     },
     {
@@ -20,7 +29,7 @@ let allSongs = [{
         path: 'songs/Body.mp3',
         img: 'img/covers/Body.jpg',
         artist: 'Tion Wayne, Russ Millions, Capo Plaza',
-        id: 1,
+        id: 3,
         active: false,
     },
     {
@@ -28,7 +37,7 @@ let allSongs = [{
         path: 'songs/Watermelon Sugar.mp3',
         img: 'img/covers/Watermelon Sugar.jpg',
         artist: 'Harry Styles',
-        id: 2,
+        id: 4,
         active: false,
     },
     {
@@ -36,7 +45,7 @@ let allSongs = [{
         path: 'songs/Papaoutai.mp3',
         img: 'img/covers/Stromae-Papaoutai.jpg',
         artist: 'Stromae',
-        id: 3,
+        id: 5,
         active: false,
     },
     {
@@ -44,7 +53,7 @@ let allSongs = [{
         path: 'songs/Nothing Breaks Like a Heart.mp3',
         img: 'img/covers/Nothing Breaks Like a Heart.png',
         artist: 'Mark Ronson ft. Miley Cyrus',
-        id: 4,
+        id: 6,
         active: false,
     },
     {
@@ -52,15 +61,7 @@ let allSongs = [{
         path: 'songs/Blinding Lights.mp3',
         img: 'img/covers/Blinding Lights.jfif',
         artist: 'The Weekend',
-        id: 5,
-        active: false,
-    },
-    {
-        name: 'Arcade',
-        path: 'songs/Arcade.mp3',
-        img: 'img/covers/Arcade.jfif',
-        artist: 'Duncan Laurance',
-        id: 6,
+        id: 7,
         active: false,
     },
 ]
