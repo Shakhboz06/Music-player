@@ -154,8 +154,7 @@ volume_sign.onclick = () => {
 
 let music_list = () => {
     library.innerHTML = ``
-    library.classList.toggle('active_l')
-
+    library.classList.add('active_l')
 
     for (let item of allSongs) {
         let list = document.createElement('div')
