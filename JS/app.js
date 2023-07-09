@@ -16,10 +16,11 @@ let play = document.querySelector('.play')
 let volume_m = document.querySelector('.volume_m')
 let volume_sign = document.querySelector('.volume_sign')
 let volume_p = document.querySelector('.volume_p')
+let track = document.createElement('audio')
 
 let index_no = 0
 let playing_song = false
-let track = document.createElement('audio')
+
 
 let load_track = (index_no) => {
     track.src = allSongs[index_no].path
@@ -28,8 +29,10 @@ let load_track = (index_no) => {
     artist.innerHTML = allSongs[index_no].artist
     track.load()
 }
+
 load_track(index_no)
 
+ 
 liked.onclick = () => {
     liked.classList.toggle('active')
     liked.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>'
@@ -90,7 +93,7 @@ track.addEventListener('timeupdate', (e) => {
     let musicDuration = e.target.duration
     let position = currentTime / musicDuration
     show_duration.style.width = position * 100 + '%'
-
+    
     track.addEventListener('timeupdate', () => {
         let audioDuration = track.duration
         let totalMin = Math.floor(audioDuration / 60)
@@ -100,16 +103,16 @@ track.addEventListener('timeupdate', (e) => {
         }
         last_i.innerText = `${totalMin}:${totalSec}`
 
-
+        
         let CurrentMin = Math.floor(currentTime / 60)
         let CurrentSec = Math.floor(currentTime % 60)
         if (CurrentSec < 10) {
             CurrentSec = `0${CurrentSec}`
         }
         initial_i.innerText = `${CurrentMin}:${CurrentSec}`
-
+        
     })
-
+    
     if (track.ended) {
         play_forward()
     }
@@ -130,7 +133,6 @@ progressArea.onclick = (e) => {
     track.currentTime = (clicked / progressWidth) * songDuration
     playSong()
 }
-
 
 let decreaseVolume = () => {
     track.volume -= 0.2
@@ -155,31 +157,37 @@ volume_sign.onclick = () => {
 let music_list = () => {
     library.innerHTML = ``
     library.classList.toggle('active_l')
+    if (library.classList.contains('active_l')) {
+        library.classList.remove('active_2')
 
+    }else{
+        library.classList.add('active_2')
+    }
+    
     for (let item of allSongs) {
         let list = document.createElement('div')
         list.classList.add('list')
         list.setAttribute('id', item.id)
-
+        
         let left_side = document.createElement('div')
         left_side.classList.add('left-side')
-
+        
         let right_side = document.createElement('div')
         right_side.classList.add('right-side')
-
+        
         let h5 = document.createElement('h5')
         let h6 = document.createElement('h6')
         let duration = document.createElement('p')
         let audio = document.createElement('audio')
         audio.src = item.path
-
+        
         let handle = document.createElement('div')
         handle.classList.add('handle')
-
+        
         // audio.addEventListener('timeupdate', () => {
-        // //     let audioDuration = audio.duration
-        // //     let totalMin = Math.floor(audioDuration / 60)
-        // //     let totalSec = Math.floor(audioDuration % 60)
+            // //     let audioDuration = audio.duration
+            // //     let totalMin = Math.floor(audioDuration / 60)
+            // //     let totalSec = Math.floor(audioDuration % 60)
         // //     if (totalSec < 10) {
         // //         totalSec = `0${totalSec}`
         // //     }
@@ -188,12 +196,12 @@ let music_list = () => {
 
         h5.innerText = item.name
         h6.innerText = item.artist
-
+        
         right_side.append(duration, audio, handle)
         left_side.append(h5, h6)
         list.append(left_side, right_side)
         library.append(list)
-
+        
         let lists = document.querySelectorAll('.list')
         for (let item of lists) {
             item.onclick = () => {
