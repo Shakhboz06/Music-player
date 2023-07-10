@@ -21,7 +21,6 @@ let track = document.createElement('audio')
 let index_no = 0
 let playing_song = false
 
-
 let load_track = (index_no) => {
     track.src = allSongs[index_no].path
     title.innerHTML = allSongs[index_no].name
@@ -30,7 +29,7 @@ let load_track = (index_no) => {
     track.load()
 }
 
-load_track(index_no)
+load_track(index_no);
 
  
 liked.onclick = () => {
@@ -59,15 +58,15 @@ let pauseSong = () => {
 }
 
 let play_forward = () => {
-    if (index_no < allSongs.length - 1) {
+    if (index_no < allSongs.length - 1) {        
         index_no += 1
+        console.log(index_no)
         load_track(index_no)
         playSong()
     } else {
         index_no = 0
         load_track(index_no)
         playSong()
-            // screensaver()
     }
     liked.classList.remove('active')
 }
@@ -87,36 +86,32 @@ let play_backward = () => {
 }
 play_b.onclick = () => play_backward()
 
+track.onloadedmetadata = () =>{ 
+    let audioDuration = track.duration
+    let totalMin = Math.floor(audioDuration / 60)
+    let totalSec = Math.floor(audioDuration % 60)
+    if (totalSec < 10) {
+        totalSec = `0${totalSec}`
+    }
+    last_i.innerText = `${totalMin}:${totalSec}`
+}
 
-track.addEventListener('timeupdate', (e) => {
-    let currentTime = e.target.currentTime
-    let musicDuration = e.target.duration
+track.ontimeupdate = () => {
+    let currentTime = event.target.currentTime
+    let musicDuration = event.target.duration
     let position = currentTime / musicDuration
     show_duration.style.width = position * 100 + '%'
     
-    track.addEventListener('timeupdate', () => {
-        let audioDuration = track.duration
-        let totalMin = Math.floor(audioDuration / 60)
-        let totalSec = Math.floor(audioDuration % 60)
-        if (totalSec < 10) {
-            totalSec = `0${totalSec}`
-        }
-        last_i.innerText = `${totalMin}:${totalSec}`
-
-        
-        let CurrentMin = Math.floor(currentTime / 60)
-        let CurrentSec = Math.floor(currentTime % 60)
-        if (CurrentSec < 10) {
-            CurrentSec = `0${CurrentSec}`
-        }
-        initial_i.innerText = `${CurrentMin}:${CurrentSec}`
-        
-    })
-    
+    let CurrentMin = Math.floor(currentTime / 60)
+    let CurrentSec = Math.floor(currentTime % 60)
+    if (CurrentSec < 10) {
+        CurrentSec = `0${CurrentSec}`
+    }
+    initial_i.innerText = `${CurrentMin}:${CurrentSec}`
     if (track.ended) {
         play_forward()
     }
-})
+}
 
 let screensaver = () => {
     let handle = document.querySelector('.handle')
@@ -183,16 +178,6 @@ let music_list = () => {
         
         let handle = document.createElement('div')
         handle.classList.add('handle')
-        
-        // audio.addEventListener('timeupdate', () => {
-            // //     let audioDuration = audio.duration
-            // //     let totalMin = Math.floor(audioDuration / 60)
-            // //     let totalSec = Math.floor(audioDuration % 60)
-        // //     if (totalSec < 10) {
-        // //         totalSec = `0${totalSec}`
-        // //     }
-        // //     duration.innerText = `${totalMin}:${totalSec}`
-        // // })
 
         h5.innerText = item.name
         h6.innerText = item.artist
