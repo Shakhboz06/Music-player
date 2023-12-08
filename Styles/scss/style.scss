@@ -9,7 +9,7 @@
             background-color: #b9b4b4;
             .container {
                 max-width: 600px;
-                max-height: 700px;
+                min-height: 100vh;
                 margin: 0 auto;
                 padding: 24px;
                 background: linear-gradient(to top, rgb(205, 37, 218), red, rgb(94, 94, 168));
